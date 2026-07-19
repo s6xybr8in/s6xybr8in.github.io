@@ -4,5 +4,7 @@ main:
     url: https://github.com/s6xybr8in/
   - title: "Computer Science"
     url: /cs/
+  - title: "Problem Solving"
+    url: /ps/
   - title: "Math"
     url: /math/
