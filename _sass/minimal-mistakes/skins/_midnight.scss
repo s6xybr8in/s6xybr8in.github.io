@@ -1,0 +1,56 @@
+/* ==========================================================================
+   Midnight Garden Skin
+   ========================================================================== */
+
+/* Colors */
+$background-color: #101412 !default;
+$text-color: #E8EEE9 !default;
+$muted-text-color: #A0AEA3 !default;
+$primary-color: #A8C99A !default;
+$border-color: #2B352E !default;
+$code-background-color: #191F1B !default;
+$code-background-color-dark: #141A16 !default;
+$form-background-color: #191F1B !default;
+$footer-background-color: #0D110F !default;
+$link-color: #A8C99A !default;
+$link-color-hover: #C5E1A5 !default;
+$link-color-visited: #A8C99A !default;
+$masthead-link-color: #E8EEE9 !default;
+$masthead-link-color-hover: #A8C99A !default;
+$navicon-link-color-hover: #191F1B !default;
+
+/* Syntax highlighting (Base16 Midnight Garden) */
+$base00: #191F1B !default; /* code background */
+$base01: #212924 !default;
+$base02: #2B352E !default;
+$base03: #617367 !default; /* comments */
+$base04: #A0AEA3 !default; /* dark foreground / line numbers */
+$base05: #E8EEE9 !default; /* default foreground */
+$base06: #F4F7F5 !default;
+$base07: #FFFFFF !default;
+$base08: #E58585 !default; /* variables */
+$base09: #E2A06E !default; /* constants / numbers */
+$base0a: #D8C37C !default; /* classes */
+$base0b: #A8C99A !default; /* strings */
+$base0c: #84C5AC !default; /* support / regex */
+$base0d: #8CBFE2 !default; /* functions / methods */
+$base0e: #C1A1E2 !default; /* keywords */
+$base0f: #DDA27A !default;
+
+/* Typography */
+$sans-serif: "Pretendard", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
+$monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !default;
+$global-font-family: $sans-serif !default;
+$header-font-family: $sans-serif !default;
+
+.author__urls.social-icons i,
+.author__urls.social-icons .svg-inline--fa,
+.page__footer-follow .social-icons i,
+.page__footer-follow .social-icons .svg-inline--fa {
+  color: inherit;
+}
+
+.ais-search-box .ais-search-box--input {
+  background-color: $form-background-color;
+}
+

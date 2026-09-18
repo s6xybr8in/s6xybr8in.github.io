@@ -1,4 +1,10 @@
 {% assign posts = site.categories[include.taxonomy] | where_exp: "post", "post.hidden != true" %}
-{%- for post in posts -%}
-  {% include archive-single.html %}
-{%- endfor -%}
+{% if posts.size > 0 %}
+  {%- for post in posts -%}
+    {% include archive-single.html %}
+  {%- endfor -%}
+{% else %}
+  <div class="notes-empty-state show">
+    <p>No notes in this category yet 🌱</p>
+  </div>
+{% endif %}

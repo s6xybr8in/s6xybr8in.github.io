@@ -1,10 +1,16 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<div class="midnight-container">
+  <div class="notes-section-header" style="margin-bottom: 2rem;">
+    <h1 class="notes-title" style="font-size: 1.5rem;">{{ page.title }}</h1>
+    <a href="{{ '/' | relative_url }}" class="filter-tab-btn" style="text-decoration: none; font-size: 0.9rem;">&larr; Back to All</a>
+  </div>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include posts-category.html taxonomy=page.taxonomy type=entries_layout %}
+  {{ content }}
+
+  <div class="midnight-notes-list">
+    {% include posts-category.html taxonomy=page.taxonomy %}
+  </div>
 </div>

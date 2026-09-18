@@ -1,20 +1,96 @@
 ---
-layout: archive
+layout: default
 ---
 
-{{ content }}
+<div class="midnight-container">
+  <!-- Hero Section -->
+  <section class="midnight-hero">
+    <div class="midnight-hero-left">
+      <div class="hero-kicker">NOTES ON CODE, MATH &amp; ALGORITHMS</div>
+      <div class="hero-bio">
+        <span class="bio-line">배우고, 풀고,</span>
+        <span class="bio-line">언젠가는 나만의 게임을.</span>
+        <div class="bio-sub">스타듀밸리의 개발자를 꿈꿉니다.</div>
+      </div>
+    </div>
+    <div class="midnight-hero-right">
+      <div class="sprout-illustration-wrap">
+        <img class="sprout-svg-hero" src="{{ '/assets/images/sprout-pixel.svg' | relative_url }}" alt="Pixel Sprout" width="162" height="96">
+      </div>
+    </div>
+  </section>
 
-<h3 class="archive__subtitle">{{ site.data.ui-text[site.locale].recent_posts | default: "Recent Posts" }}</h3>
+  <!-- 3 Category Cards -->
+  <div class="category-cards-grid">
+    <a href="{{ '/cs/' | relative_url }}" class="category-card">
+      <div class="card-top">
+        <span class="card-index">01 / CS</span>
+      </div>
+      <div class="card-bottom">
+        <div class="card-label-wrap">
+          <span class="card-icon">&lt;/&gt;</span>
+          <span class="card-title">Computer Science</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
 
-{% if paginator %}
-  {% assign posts = paginator.posts %}
-{% else %}
-  {% assign posts = site.posts %}
-{% endif %}
+    <a href="{{ '/math/' | relative_url }}" class="category-card">
+      <div class="card-top">
+        <span class="card-index">02 / MATH</span>
+      </div>
+      <div class="card-bottom">
+        <div class="card-label-wrap">
+          <span class="card-icon">&int;</span>
+          <span class="card-title">Mathematics</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
 
-{% assign entries_layout = page.entries_layout | default: 'list' %}
-<div class="entries-{{ entries_layout }}">
-  {% include documents-collection.html entries=posts type=entries_layout %}
+    <a href="{{ '/ps/' | relative_url }}" class="category-card">
+      <div class="card-top">
+        <span class="card-index">03 / PS</span>
+      </div>
+      <div class="card-bottom">
+        <div class="card-label-wrap">
+          <span class="card-icon"><i class="fas fa-trophy"></i></span>
+          <span class="card-title">Problem Solving</span>
+        </div>
+        <span class="card-arrow">↗</span>
+      </div>
+    </a>
+  </div>
+
+  {% if content %}
+    <div class="home-custom-content">{{ content }}</div>
+  {% endif %}
+
+  <!-- Recent Notes & Filter Header -->
+  <div class="notes-section-header">
+    <h2 class="notes-title">Recent notes</h2>
+    <div class="notes-filter-tabs">
+      <button class="filter-tab-btn active" data-filter="all">All</button>
+      <span class="filter-tab-sep">/</span>
+      <button class="filter-tab-btn" data-filter="cs">CS</button>
+      <span class="filter-tab-sep">/</span>
+      <button class="filter-tab-btn" data-filter="math">Math</button>
+      <span class="filter-tab-sep">/</span>
+      <button class="filter-tab-btn" data-filter="ps">PS</button>
+    </div>
+  </div>
+
+  <!-- Notes List -->
+  <div class="midnight-notes-list" id="midnight-notes-list">
+    {% for post in site.posts %}
+      {% include archive-single.html %}
+    {% endfor %}
+  </div>
+
+  <!-- Empty state for filter -->
+  <div class="notes-empty-state" id="notes-empty-state">
+    <p>No notes in this category yet 🌱</p>
+  </div>
 </div>
 
-{% include paginator.html %}
+<script src="{{ '/assets/js/category-filter.js' | relative_url }}"></script>
