@@ -37,7 +37,15 @@ $base0d: #8CBFE2 !default; /* functions / methods */
 $base0e: #C1A1E2 !default; /* keywords */
 $base0f: #DDA27A !default;
 
-/* Typography */
+/* Typography & Sizing (Font size -30%, Content width +30%) */
+$doc-font-size: 13px !default;
+$doc-font-size-medium: 13.5px !default;
+$doc-font-size-large: 14.5px !default;
+$doc-font-size-x-large: 15.4px !default; /* 22px * 0.70 = 15.4px (30% reduction) */
+
+$x-large: 1664px !default; /* 1280px * 1.30 = 1664px (30% wider) */
+$max-width: 1664px !default;
+
 $sans-serif: "Pretendard", -apple-system, BlinkMacSystemFont, "Roboto", "Segoe UI", "Helvetica Neue", Arial, sans-serif !default;
 $monospace: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace !default;
 $global-font-family: $sans-serif !default;
